@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -204,4 +205,212 @@
 </script>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo App</title>
+<link rel="stylesheet" href="todo.css">
+
+</head>
+<body>
+
+<div id="todo"></div>
+
+<script>
+
+(function(){
+
+    let todos=JSON.parse(localStorage.getItem("todos"))||[];
+    let id=Number(localStorage.getItem("Id"))||0;
+
+    const todocontainer=document.getElementById("todo");
+
+    const todoinput=document.createElement("input");
+    todoinput.type="text";
+    todoinput.placeholder="Enter task...";
+
+    const addbtn=document.createElement("button");
+    addbtn.textContent="ADD";
+
+    const searchinput=document.createElement("input");
+    searchinput.type="text";
+    searchinput.placeholder="Search task...";
+
+    const todolist=document.createElement("div");
+    todolist.id="list";
+
+    todocontainer.append(
+        todoinput,
+        addbtn,
+        document.createElement("br"),
+        searchinput,
+        todolist
+    );
+
+    function saveData(){
+        localStorage.setItem("todos",JSON.stringify(todos));
+        localStorage.setItem("Id",id);
+    }
+
+    function rendertask(todo){
+
+        const todoitem=document.createElement("div");
+        todoitem.className="todoitem";
+        todoitem.dataset.task=todo.task.toLowerCase();
+
+        if(todo.completed){
+            todoitem.classList.add("completed");
+        }
+
+        const p=document.createElement("p");
+        p.textContent=todo.task;
+
+        const deletebtn=document.createElement("button");
+        deletebtn.textContent="Delete";
+
+        const editbtn=document.createElement("button");
+        editbtn.textContent="Edit";
+
+        const completebtn=document.createElement("button");
+        completebtn.textContent=todo.completed?"Completed":"Complete";
+
+        if(todo.completed){
+            completebtn.disabled=true;
+        }
+
+        completebtn.addEventListener("click",function(){
+
+            todo.completed=true;
+
+            todoitem.classList.add("completed");
+            completebtn.textContent="Completed";
+            completebtn.disabled=true;
+
+            saveData();
+
+        });
+
+        editbtn.addEventListener("click",function(){
+
+            const editinput=document.createElement("input");
+            editinput.value=todo.task;
+
+            const savebtn=document.createElement("button");
+            savebtn.textContent="Save";
+
+            todoitem.prepend(editinput,savebtn);
+
+            editinput.focus();
+
+            savebtn.addEventListener("click",function(){
+
+                const updatedtask=editinput.value.trim();
+
+                if(!updatedtask){
+                    return;
+                }
+
+                todo.task=updatedtask;
+                p.textContent=updatedtask;
+                todoitem.dataset.task=updatedtask.toLowerCase();
+
+                saveData();
+
+                editinput.remove();
+                savebtn.remove();
+
+            });
+
+        });
+
+        deletebtn.addEventListener("click",function(){
+
+            todos=todos.filter(function(t){
+                return t.id!==todo.id;
+            });
+
+            saveData();
+
+            todoitem.remove();
+
+        });
+
+        todoitem.append(
+            p,
+            deletebtn,
+            editbtn,
+            completebtn
+        );
+
+        todolist.prepend(todoitem);
+
+    }
+
+    function addtodo(){
+
+        const task=todoinput.value.trim();
+
+        if(!task){
+            return;
+        }
+
+        id++;
+
+        const todo={
+            id:id,
+            task:task,
+            completed:false
+        };
+
+        todos.unshift(todo);
+
+        saveData();
+        rendertask(todo);
+
+        todoinput.value="";
+        todoinput.focus();
+
+    }
+
+    todos.forEach(function(todo){
+        rendertask(todo);
+    });
+
+    addbtn.addEventListener("click",addtodo);
+
+    todoinput.addEventListener("keydown",function(e){
+
+        if(e.key==="Enter"){
+            addtodo();
+        }
+
+    });
+
+    searchinput.addEventListener("input",function(){
+
+        const search=searchinput.value.toLowerCase();
+
+        const items=todolist.children;
+
+        for(let i=0;i<items.length;i++){
+
+            if(items[i].dataset.task.includes(search)){
+                items[i].style.display="";
+            }
+            else{
+                items[i].style.display="none";
+            }
+
+        }
+
+    });
+
+})();
+</script>
+
+</body>
+>>>>>>> 1cc16830d784340ba8e1c518c512ed977feee66f
 </html>
