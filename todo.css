@@ -50,7 +50,7 @@ body{
 
 .completed p{
     text-decoration:line-through;
-=======
+}
 *{
     margin:0;
     padding:0;
@@ -103,5 +103,4 @@ body{
 
 .completed p{
     text-decoration:line-through;
->>>>>>> 1cc16830d784340ba8e1c518c512ed977feee66f
 }
