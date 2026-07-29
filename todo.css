@@ -1,0 +1,53 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:white;
+}
+
+#todo{
+    width:500px;
+    margin:30px auto;
+    background: honeydew;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+#todo input{
+    padding:8px;
+    margin:5px;
+}
+
+#todo button{
+    padding:8px 12px;
+    margin:5px;
+    cursor:pointer;
+}
+
+#list{
+    margin-top:15px;
+}
+
+.todoitem{
+    border:2px solid red;
+    padding:10px;
+    margin:10px 0;
+}
+
+.todoitem p{
+    display:inline-block;
+    width:180px;
+}
+
+.completed{
+    background:lime;
+}
+
+.completed p{
+    text-decoration:line-through;
+}
