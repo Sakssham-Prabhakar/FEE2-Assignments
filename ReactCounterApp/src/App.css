@@ -1,0 +1,42 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fc;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.card-box {
+  border: 2px solid maroon;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+button:hover {
+  background-color: #bbdefb;
+}
