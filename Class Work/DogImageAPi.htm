@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dog</title>
+    <style> 
+        body{
+            background-color: honeydew;
+            text-align: center; 
+            margin-top: 100px; 
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Random Dog Image</h2>
+
+    <img class="dog" width="300" height="300">
+
+    <br><br>
+
+    <button class="btn">New Dog</button>
+
+    <script>
+        const url = "https://dog.ceo/api/breeds/image/random";
+
+        const dog = document.querySelector(".dog");
+        const btn = document.querySelector(".btn");
+
+        getDog();
+
+        btn.addEventListener("click", getDog);
+
+        async function getDog() {
+            try {
+                const data = await fetch(url);
+                const originaldata = await data.json();
+
+                console.log(originaldata);
+
+                dog.src = originaldata.message;
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }
+    </script>
+
+</body>
+</html>
