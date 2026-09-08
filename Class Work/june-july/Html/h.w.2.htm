@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Meme Fun Page</title>
+  <style>
+    body {
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .box{
+
+        width: 1500px;
+        height: 500px;
+    }
+    .meme-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .meme-card:hover {
+      transform: translateY(500px);
+    }
+
+    .meme-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .meme-caption {
+      padding: 15px 20px;
+      font-weight: bold;
+      color: #444;
+      font-size: 1.1rem;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="meme-card">
+    <img class="meme-image" src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=500&auto=format&fit=crop" alt="Cat wearing sunglasses">
+    <div class="meme-caption">Me looking at my code that actually worked on the first try.</div>
+  </div>
+
+  <div class="box">
+    <img class="meme-image" src="Screenshotmeme.png">
+    <div class="meme-caption">"</div>
+  </div>
+
+</body>
+</html>

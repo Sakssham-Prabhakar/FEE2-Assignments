@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+localStorage.setItem("name","Sakssham");
+localStorage.setItem("lastname","Prabhakar");
+
+const name = localStorage.getItem("lastname");
+console.log(typeof(name));
+const detail={
+    name: "Sakssahm",
+    lastname: "Prabhakar"
+}
+
+localStorage.setItem("d",JSON.stringify(details));
+const getob = JSON.parse(localStorage.getItem("d"));
+console.log(getob);
+
+    </script>
+</body>
+</html>

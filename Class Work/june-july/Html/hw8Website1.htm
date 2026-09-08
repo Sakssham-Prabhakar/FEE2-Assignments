@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            /* font-family: Arial, Helvetica, sans-serif; */
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            /* Center the links */
+            align-items: center;
+            /* Vertically center */
+            gap: 25px;
+            /* Space between links */
+            background-color: rgba(129, 138, 145, 0.6);
+            border: 2px solid black;
+            padding: 15px 0;
+
+            opacity: 0.6;
+        }
+
+        .box {
+            flex-direction: column;
+            min-height: 100vh;
+            /* width: 100%; */
+            background-image: url("images.jpg");
+            background-size: contain;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #outer {
+            height: 80vh;
+            width: 50%;
+            box-sizing: border-box;
+            background: aquamarine;
+            /* padding: 50px; */
+            border-radius: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            opacity: 0.9;
+
+
+        }
+
+        #inner {
+            height: 50%;
+            width: 40%;
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        #blankBox {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            background-color: green;
+            margin-top: 600px;
+            opacity: 0.9;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            height: 48px;
+            border-radius: 30px;
+            border: 2px solid #ddd;
+            outline: none;
+            padding-left: 18px;
+            font-size: 16px;
+            margin-bottom: 18px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #12191a;
+        }
+
+        .password-box {
+            position: relative;
+        }
+
+        .password-box span {
+            position: absolute;
+            right: 18px;
+            top: 13px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .message {
+            position: absolute;
+            top: -20px;
+            right: 45px;
+            background: black;
+            color: white;
+            padding: 8px 8px;
+            border-radius: 20px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0.2;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+
+        .O:hover .message {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        button {
+            width: 100%;
+            height: 48px;
+            border: none;
+            border-radius: 30px;
+            background: orangered;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #16aebe;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <a href="D_Html/Zh/g8navBar.htm">Home | </a>
+        <a href="D_Html/Zh/hw8Website1.htm">Login | </a>
+        <a href="">Contact | </a>
+        <a href="D_Html/Zh/cw8Website1.htm">About | </a>
+    </nav>
+
+    <div class="box">
+
+
+        <div id="outer">
+            <div id="inner">
+                <h1 style="text-align: center;">Welcome Back</h1>
+                <hr>
+                <br>
+
+                <form>
+                    <input type="email" placeholder="Email">
+                    <!-- required -->
+                    <div class="password-box">
+                        <input type="password" placeholder="Password" minlength="8">
+                        <span class="O">O
+                            <div class="message">
+                                Password should be at least 8 letters.
+                            </div>
+                        </span>
+
+                    </div>
+                    <button type="submit">
+                        Login
+                    </button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div id="blankBox">
+
+        </div>
+    </div>
+</body>
+
+</html>
