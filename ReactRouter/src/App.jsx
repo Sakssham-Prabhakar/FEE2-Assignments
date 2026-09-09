@@ -6,6 +6,8 @@ import Product from "./Components/Produts";
 import Login from "./Components/Login";
 import ProductsDetails from "./Components/ProductsDetails";
 import Contact from "./Components/Contact";
+import NotFound from "./Components/NotFound";
+
 import './App.css';
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
       <Navbar />
       <h1>App Component</h1>
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Product />} />

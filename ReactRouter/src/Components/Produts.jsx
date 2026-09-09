@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom";
-
+import { useState, useEffect } from "react";
 function Product() {
+  const [products,setProducts] = useState([]);
+// use effect 3 forms
+  useEffect(()=>{
+    fetch('https://dummyjson.com/products')
+    .then(res=>res.json())
+    .then(res=>setProducts(res.products));
+  },[])
   return (
     <div>
       <h2>Products List</h2>
       <ul>
-        <li><Link to="/products/1">Product 1</Link></li>
-        <li><Link to="/products/2">Product 2</Link></li>
+          {products.map((products)=>{
+            return(
+              <li>{products.title}</li>
+            )
+          })}
       </ul>
     </div>
   );
