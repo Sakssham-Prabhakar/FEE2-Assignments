@@ -1,0 +1,3 @@
+- State Lifting: Moving state to closest common parent to share.
+- Prop Drilling: Passing props through intermediate components down to children.
+- Custom Hooks: Extracting reusable stateful logic into modular JS functions.
